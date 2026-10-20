@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Démo de styles d'animation</title>
+  <meta name="description" content="Deux styles d'animation web, Kinetic type et Liquid morph, présentés sur des commerces fictifs.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,100..900&family=Fraunces:opsz,wght,SOFT@9..144,100..900,0..100&family=Schibsted+Grotesk:wght@400..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Filtre « goo » : fait fusionner les formes qui se touchent -->
+  <svg class="defs" width="0" height="0" aria-hidden="true" focusable="false">
+    <defs>
+      <filter id="goo">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="12" result="blur"/>
+        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 22 -9" result="goo"/>
+        <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+      </filter>
+    </defs>
+  </svg>
+
+  <header class="top">
+    <a class="top-brand" href="#kinetic">Démo de styles</a>
+    <nav aria-label="Styles">
+      <a href="#kinetic">Kinetic type</a>
+      <a href="#liquid">Liquid morph</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1 class="sr">Démo de styles d'animation, sur des commerces fictifs</h1>
+
+    <!-- ============ KINETIC TYPE ============ -->
+    <section id="kinetic" class="k" aria-labelledby="k-title">
+      <div class="k-hero">
+        <p class="k-top">Maison Mendes, barbier à Bordeaux</p>
+        <h2 class="k-title" id="k-title" aria-label="On rase de près.">
+          <span class="line" aria-hidden="true">On rase</span>
+          <span class="line" aria-hidden="true">de près.</span>
+        </h2>
+        <div class="k-foot">
+          <p>Coupe, barbe, serviette chaude. Du mardi au samedi, sur rendez-vous.</p>
+          <a class="k-btn" href="#k-tarifs">Voir les tarifs</a>
+        </div>
+      </div>
+
+      <div class="k-marq" data-dir="-1" aria-hidden="true">
+        <div class="k-track"><span class="k-group">Coupe 25 € ✶ Barbe 15 € ✶ Coupe et barbe 35 € ✶ Rasage à l'ancienne 22 € ✶&nbsp;</span></div>
+      </div>
+      <div class="k-marq k-marq--out" data-dir="1" aria-hidden="true">
+        <div class="k-track"><span class="k-group">Sans rendez-vous le samedi matin ✶ Café offert ✶&nbsp;</span></div>
+      </div>
+
+      <div class="k-manifesto">
+        <p data-fill>Un rasoir bien affûté, une serviette chaude et personne qui vous presse. Vous repartez quand c'est net.</p>
+      </div>
+
+      <div class="k-prices" id="k-tarifs">
+        <h3>Tarifs</h3>
+        <ul>
+          <li><span>Coupe</span><span>25 €</span></li>
+          <li><span>Barbe</span><span>15 €</span></li>
+          <li><span>Coupe et barbe</span><span>35 €</span></li>
+          <li><span>Rasage à l'ancienne</span><span>22 €</span></li>
+        </ul>
+        <a class="k-btn k-btn--solid" href="#kinetic">Réserver un créneau</a>
+        <p class="tag">Commerce fictif. Style : kinetic type.</p>
+      </div>
+    </section>
+
+    <!-- ============ LIQUID MORPH ============ -->
+    <section id="liquid" class="l" aria-labelledby="l-title">
+      <div class="l-hero">
+        <div class="goo-field" aria-hidden="true">
+          <svg class="l-blob l-blob--hero" viewBox="0 0 600 600"><path/></svg>
+          <span class="drop"></span><span class="drop"></span><span class="drop"></span>
+          <span class="drop"></span><span class="drop"></span><span class="drop"></span>
+        </div>
+        <div class="l-intro">
+          <p class="l-top">Gelats Marina, glacier à Barcelone</p>
+          <h2 class="l-title" id="l-title">Ça coule de source.</h2>
+          <p class="l-sub">Des glaces faites le matin même, avec des fruits du marché de la Boqueria.</p>
+        </div>
+      </div>
+
+      <div class="l-flavors">
+        <div class="l-stage" aria-hidden="true">
+          <svg class="l-blob l-blob--flavor" viewBox="0 0 600 600"><path/></svg>
+        </div>
+        <div class="l-texts">
+          <article class="flavor">
+            <h3>Framboise</h3>
+            <p>Acidulée, presque sans sucre ajouté. La plus demandée de l'été.</p>
+            <p class="price">2,80 € la boule</p>
+          </article>
+          <article class="flavor">
+            <h3>Pistache</h3>
+            <p>Pistaches de Sicile torréfiées sur place, un peu de sel.</p>
+            <p class="price">3,20 € la boule</p>
+          </article>
+          <article class="flavor">
+            <h3>Mangue</h3>
+            <p>Sorbet plein fruit, sans lait. Frais comme une fin d'après-midi.</p>
+            <p class="price">2,80 € la boule</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="l-end">
+        <p class="l-end-title">Passez goûter.</p>
+        <p>Carrer de la Marina, tous les jours de 12h à minuit.</p>
+        <a class="l-btn" href="#liquid">Voir l'itinéraire</a>
+        <p class="tag">Commerce fictif. Style : liquid morph.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
